@@ -11,3 +11,4 @@ app.use('/', routes);
 dbConnection();
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+
