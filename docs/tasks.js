@@ -1,12 +1,12 @@
 module.exports = {
     paths: {
         "/create": {
-            post: {
+            get: {
                 tags: {
-                    Users: "Create a user",
+                    Task: "Get Tasks",
                 },
-                description: "Create User",
-                operationId: "createUser",
+                description: "Get tasks",
+                operationId: "getTasks",
                 parameters: [],
                 requestBody: {
                     content: {
@@ -19,7 +19,7 @@ module.exports = {
                 },
                 responses: {
                     201: {
-                        description: "User created successfully",
+                        description: "task created successfully",
                     },
                     500: {
                         description: "Server error",
@@ -30,10 +30,10 @@ module.exports = {
         "/id/{_id}": {  
             put: {
                 tags: {
-                    Tasks: "Update a user",
+                    Tasks: "Update a task",
                 },
-                description: "Update User",
-                operationId: "updateUser",
+                description: "Update task",
+                operationId: "updateTask",
                 parameters: [
                     {
                         name: "_id",
@@ -41,18 +41,19 @@ module.exports = {
                         schema: {
                             $ref: "#/components/schemas/_id",
                         },
-                        description: "Id of User to be updated",
+                        description: "task to be updated",
                     },
                 ],
                 requestBody: {
                     content: {
                         "application/json": {
-                            schema: { $ref: "#/components/schemas/User" },
+                            schema: { 
+                                $ref: "#/components/schemas/task" },
                         },
                     },
                 },
                 responses: {
-                    200: { description: "User updated successfully" },
+                    200: { description: "task updated successfully" },
                     500: { description: "Server error" },
                 },
             },

@@ -3,6 +3,7 @@ module.exports = {
     info:{
         version:"1.0.0",
         title:"Task",
-        description: "Users API"
+        description: "Task API"
     }
 }
+// version de la documentacion de swagger
